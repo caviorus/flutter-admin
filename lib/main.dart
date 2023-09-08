@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_admin/components/sidebar/sidebar.dart';
 import 'package:flutter_admin/view/home/home.dart';
 
-void main(){
+void main() {
   runApp(MainApp());
 }
 
@@ -23,27 +24,24 @@ class AdminNavigation extends StatelessWidget {
   final Widget? body;
   const AdminNavigation({super.key, this.body});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("App Title"),),
+      appBar: AppBar(
+        title: Text("App Title"),
+      ),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          if(constraints.maxWidth < 600){
-            return Container(child: Text("xs"));
-          }
-          else if(constraints.maxWidth < 900){
+          if (constraints.maxWidth < 600) {
+            return SideBar(body: body);
+          } else if (constraints.maxWidth < 900) {
             return Container(child: Text("sm"));
-          }
-          else if(constraints.maxWidth < 1200){
+          } else if (constraints.maxWidth < 1200) {
             return Container(child: Text("md"));
-          }
-          else if(constraints.maxWidth < 1536){
+          } else if (constraints.maxWidth < 1536) {
             return Container(child: Text("lg"));
-          }
-          else{
-            return Container(child: Text("xl"));
+          } else {
+            return SideBar(body: body);
           }
         },
       ),
