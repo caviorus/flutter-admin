@@ -6,7 +6,8 @@ enum SideBarBreakpoints { xs, sm, md, lg, xl }
 class SideBar extends StatelessWidget {
   final SideBarBreakpoints? sideBarBreakpoints;
   final Widget? body;
-  SideBar({super.key, this.sideBarBreakpoints, this.body});
+  final bool? expanded;
+  SideBar({super.key, this.sideBarBreakpoints, this.body, this.expanded});
 
   var _selectedIndex = 0.obs;
   @override
@@ -15,13 +16,14 @@ class SideBar extends StatelessWidget {
       children: [
         Obx(() => NavigationRail(
             backgroundColor: Color(0xFFEFF0FF),
-            extended: true,
+            extended: expanded ?? false,
+            selectedIconTheme: IconThemeData(color: Colors.amber),
             onDestinationSelected: (value) => {
               _selectedIndex.value = value
             },
             destinations: [
             NavigationRailDestination(
-                icon: Icon(Icons.home_outlined), label: Text("Home")),
+                icon: Icon(Icons.dashboard), label: Text("Dashboard")),
             NavigationRailDestination(
                 icon: Icon(Icons.bar_chart), label: Text("Perfomance")),
             NavigationRailDestination(
