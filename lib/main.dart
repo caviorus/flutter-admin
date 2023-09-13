@@ -46,15 +46,15 @@ class AdminNavigation extends StatelessWidget {
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           if (constraints.maxWidth < 600) {
-            return SideBar(body: body);
+            return Sidebar(body: body);
           } else if (constraints.maxWidth < 900) {
-            return SideBar(body: body);
+            return Sidebar(body: body);
           } else if (constraints.maxWidth < 1200) {
-            return SideBar(body: body);
+            return Sidebar(body: body);
           } else if (constraints.maxWidth < 1536) {
-            return SideBar(body: body, expanded: true,);
+            return Sidebar(body: body, expanded: true,);
           } else {
-            return SideBar(body: body, expanded: true,);
+            return Sidebar(body: body, expanded: true,);
           }
         },
       ),
