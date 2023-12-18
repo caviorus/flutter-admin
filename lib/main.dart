@@ -54,7 +54,7 @@ class AdminNavigation extends StatelessWidget {
           } else if (constraints.maxWidth < 1536) {
             return Sidebar(body: body, expanded: true,);
           } else {
-            return Sidebar(body: body, expanded: true,);
+            return Sidebar(body: body, expanded: true, width: 320,);
           }
         },
       ),

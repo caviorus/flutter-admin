@@ -42,18 +42,57 @@ class Sidebar extends StatelessWidget {
                 // Submenu
                 SubmenuWidget(
                   icon: Ionicons.body_outline,
-                  title: "Submenu",
-                  expanded: true,
+                  title: "Submenu 1",
                   submenu: [
                     SidebarItem(
-                      icon: Icons.star,
+                      icon: Ionicons.chevron_forward_outline,
                       text: 'Submenu Item 1',
                       onTap: () {
                         // Add your navigation logic here
                       },
                     ),
                     SidebarItem(
-                      icon: Icons.star,
+                      icon: Ionicons.chevron_forward_outline,
+                      text: 'Submenu Item 2',
+                      onTap: () {
+                        // Add your navigation logic here
+                      },
+                    ),
+                    SubmenuWidget(
+                      icon: Ionicons.body_outline,
+                      title: "Submenu 1",
+                      submenu: [
+                        SidebarItem(
+                          icon: Ionicons.chevron_forward_outline,
+                          text: 'Submenu Item 1',
+                          onTap: () {
+                            // Add your navigation logic here
+                          },
+                        ),
+                        SidebarItem(
+                          icon: Ionicons.chevron_forward_outline,
+                          text: 'Submenu Item 2',
+                          onTap: () {
+                            // Add your navigation logic here
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SubmenuWidget(
+                  icon: Ionicons.body_outline,
+                  title: "Submenu",
+                  submenu: [
+                    SidebarItem(
+                      icon: Ionicons.chevron_forward_outline,
+                      text: 'Submenu Item 1',
+                      onTap: () {
+                        // Add your navigation logic here
+                      },
+                    ),
+                    SidebarItem(
+                      icon: Ionicons.chevron_forward_outline,
                       text: 'Submenu Item 2',
                       onTap: () {
                         // Add your navigation logic here
